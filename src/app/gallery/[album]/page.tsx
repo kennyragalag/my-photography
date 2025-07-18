@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, useRouter, decodeURIComponent } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { Trash2, Download, X, ArrowLeft } from "lucide-react";
 import Swal from "sweetalert2";

@@ -14,7 +14,7 @@ type Photo = {
 
 type Album = {
   name: string;
-  cover: string;
+  cover?: string;
 };
 
 export default function HomePage() {
