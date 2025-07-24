@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { useParams, useRouter, decodeURIComponent } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { Trash2, Download, X, ArrowLeft } from "lucide-react";
 import Swal from "sweetalert2";
@@ -16,7 +16,7 @@ type ImageData = {
 export default function AlbumPage() {
   const params = useParams();
   const albumRaw = Array.isArray(params.album) ? params.album[0] : params.album;
-  const album = decodeURIComponent(albumRaw);
+  const album = decodeURIComponent(albumRaw ?? "");
 
   const [images, setImages] = useState<ImageData[]>([]);
   const [preview, setPreview] = useState<string | null>(null);
