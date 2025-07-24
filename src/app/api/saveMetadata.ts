@@ -5,8 +5,8 @@ import { v2 as cloudinary } from "cloudinary";
 
 // Configure Cloudinary with your credentials
 cloudinary.config({
-  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
   secure: true, // Use HTTPS
 });
@@ -41,7 +41,7 @@ export default async function handler(
     // If it is, extract the public ID. Otherwise, upload the image.
     if (
       url.startsWith(
-        `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/`
+        `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/`
       )
     ) {
       // Extract public ID from Cloudinary URL (e.g., .../upload/v12345/public_id.jpg)
